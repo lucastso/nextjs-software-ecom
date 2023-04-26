@@ -1,4 +1,4 @@
-import { ItemDescProps } from "@/types/itemDescProps";
+import { ItemDescProps } from "@/types/item_desc_props";
 
 const ItemDesc = ({ title, desc, image, alt }: ItemDescProps) => {
   return (
