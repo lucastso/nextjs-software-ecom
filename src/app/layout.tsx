@@ -32,7 +32,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
-        <title>Paracord Z | Software</title>
+        <title>Paracord Z - Software</title>
       </head>
       <body className={inter.className}>{children}</body>
     </html>
