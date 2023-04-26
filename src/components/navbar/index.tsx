@@ -47,10 +47,10 @@ const Navbar = () => {
           <Link href="/" className="font-semibold">
             HOME
           </Link>
-          <Link href="/produtos" className="font-semibold">
+          <Link href="/products" className="font-semibold">
             SOFTWARES
           </Link>
-          <Link href="/produtos" className="font-semibold">
+          <Link href="/products" className="font-semibold">
             MEETING
           </Link>
         </div>
@@ -63,7 +63,7 @@ const Navbar = () => {
               placeholder="Pesquisar..."
             />
             <Link
-              href="/produtos"
+              href="/products"
               className="bg-amber-400 rounded-full w-10 h-10 text-zinc-900 font-bold text-sm flex items-center justify-center absolute right-0"
             >
               <i className="fa-solid fa-magnifying-glass"></i>

@@ -6,14 +6,14 @@ const BannerHero = () => {
       <img
         src="https://images.unsplash.com/photo-1597239451127-914cc6d50a1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80"
         alt="Software image"
-        className="w-full opacity-90"
+        className="w-full xs:opacity-0 lg:opacity-90 h-full object-cover"
         draggable={false}
       />
-      <div className="absolute text-white flex flex-col items-center gap-4">
-        <span className="text-3xl font-semibold">
+      <div className="absolute text-white flex flex-col items-center gap-4 xs:px-6 lg:px-0">
+        <span className="text-3xl font-semibold text-center">
           Pare de pagar fortunas por softwares
         </span>
-        <span className="xs:w-full lg:w-2/3 text-center">
+        <span className="w-2/3 text-center">
           Agende projetos que caibam no seu bolso, sem dores de cabeça ou prazos
           fora do comum.
         </span>
