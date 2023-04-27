@@ -8,5 +8,9 @@ datasource db {
 
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["mongoDb"]
+}
+
+model Category {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  category String
 }
