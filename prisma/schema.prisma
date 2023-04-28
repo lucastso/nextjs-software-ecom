@@ -3,14 +3,25 @@
 
 datasource db {
   provider = "mongodb"
-  url      = env("DATABASE_URL")
+  url = env("DATABASE_URL")
 }
 
 generator client {
-  provider        = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 model Category {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   category String
+  product Product?
+}
+
+model Product {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  title String
+  description String
+  image String
+  price Int
+  category Category @relation(fields: [categoryId], references: [id])
+  categoryId String @unique @db.ObjectId
 }

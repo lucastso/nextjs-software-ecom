@@ -6,7 +6,7 @@ const BannerHero = () => {
       <img
         src="https://images.unsplash.com/photo-1597239451127-914cc6d50a1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80"
         alt="Software image"
-        className="w-full xs:opacity-0 lg:opacity-90 h-full object-cover"
+        className="w-full xs:opacity-50 lg:opacity-90 h-full object-cover"
         draggable={false}
       />
       <div className="absolute text-white flex flex-col items-center gap-4 xs:px-6 lg:px-0">
