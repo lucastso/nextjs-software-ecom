@@ -1,8 +1,9 @@
+import { fontOutfit } from "@/misc/fonts";
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="sticky bottom-0 w-screen">
+    <footer className={`static bottom-0 w-screen ${fontOutfit.className}`}>
       <div className="bg-zinc-200 text-white text-sm mt-24">
         <div className="w-4/6 mx-auto flex xs:flex-col lg:flex-row xs:gap-12 lg:gap-0 items-start justify-between py-12">
           <div className="flex flex-col items-start gap-4 text-zinc-400">
@@ -38,7 +39,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="w-4/6 mx-auto border-t border-zinc-300 text-zinc-400 text-center py-4 text-xs">
+      <div className="w-4/6 mx-auto border-t border-zinc-300 text-zinc-400 text-center py-4 text-xs bg-white">
         <span>Copyright &copy; Woogon. Todos os direitos reservados.</span>
       </div>
     </footer>

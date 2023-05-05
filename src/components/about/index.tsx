@@ -1,5 +1,7 @@
 "use client";
 
+import { fontOutfit, fontSofiaCondensed } from "@/misc/fonts";
+import { ArrowRight, ArrowLeft } from "@phosphor-icons/react";
 import { useState } from "react";
 
 const About = () => {
@@ -7,11 +9,13 @@ const About = () => {
 
   return (
     <div className="xs:w-full lg:w-4/6 mx-auto xs:px-6 lg:px-0 flex flex-col gap-8">
-      <span className="font-sofia font-semibold text-2xl tracking-wider">
-        O DESTINO DO OPEN-SOURCE SOFTWARE
+      <span
+        className={`font-semibold text-2xl tracking-wider ${fontSofiaCondensed.className}`}
+      >
+        O DESTINO DO MARKETPLACE DE SOFTWARE
       </span>
 
-      <div className="flex flex-col gap-4">
+      <div className={`flex flex-col gap-4 ${fontOutfit.className}`}>
         <span>
           A Paracord Z é uma loja online de software fundada em 2021 por um
           grupo de amigos com uma visão comum: oferecer software de alta
@@ -35,10 +39,20 @@ const About = () => {
       </div>
 
       <span
-        className="font-sofia font-semibold text-2xl tracking-wider self-center cursor-pointer"
+        className={`font-semibold text-2xl tracking-wider self-center cursor-pointer ${fontSofiaCondensed.className}`}
         onClick={() => setShowMoreAbout(!showMoreAbout)}
       >
-        {`${showMoreAbout ? "LER MENOS" : "LER MAIS"}`} &rarr;
+        {showMoreAbout ? (
+          <div className="flex items-center gap-2">
+            <span>LER MENOS</span>
+            <ArrowLeft size={16} weight="bold" />
+          </div>
+        ) : (
+          <div className="flex items-center gap-2">
+            <span>LER MAIS</span>
+            <ArrowRight size={16} weight="bold" />
+          </div>
+        )}
       </span>
     </div>
   );

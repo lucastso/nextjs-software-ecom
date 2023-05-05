@@ -1,3 +1,4 @@
+import { fontSofiaCondensed } from "@/misc/fonts";
 import Link from "next/link";
 
 const Categories = () => {
@@ -49,7 +50,9 @@ const Categories = () => {
             alt={el.alt}
             className="w-full xs:h-56 lg:h-80 object-cover rounded-sm"
           />
-          <strong className="font-sofia text-xl uppercase tracking-wider">
+          <strong
+            className={`text-xl uppercase tracking-wider ${fontSofiaCondensed.className}`}
+          >
             {el.title}
           </strong>
         </Link>

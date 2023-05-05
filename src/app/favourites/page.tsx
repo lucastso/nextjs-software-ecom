@@ -2,6 +2,11 @@ import Categories from "@/components/categories";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
+export const metadata = {
+  title: "Paracord Z - Favoritos",
+  description: "Esse são seus produtos favoritos da Paracord Z",
+};
+
 const Favourites = () => {
   return (
     <main className="overflow-x-hidden font-outfit text-zinc-900">
