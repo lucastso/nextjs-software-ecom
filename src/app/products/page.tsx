@@ -4,23 +4,30 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import { categories } from "@/misc/categories";
 import { categories_styles } from "@/misc/categories_styles";
-import { ProdutcProps } from "@/types/product";
+import { fontOutfit, fontSofiaCondensed } from "@/misc/fonts";
+import { ProductProps } from "@/types/product";
+import { ArrowDown, ArrowUp } from "@phosphor-icons/react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+export const metadata = {
+  title: "Paracord Z - Produtos",
+  description: "Esse é o catálogo de produtos da Paracord Z",
+};
 
 const Products = () => {
+  const [products, setProducts] = useState<ProductProps[]>([]);
   const [showCategoria, setShowCategoria] = useState(false);
   const [showPlano, setShowPlano] = useState(false);
   const [showAudiencia, setShowAudiencia] = useState(false);
 
-  const convertTitleToSlug = (title: string) => {
-    return title
-      .toLowerCase()
-      .replace(/ /g, "-")
-      .replace(/[^\w-]+/g, "");
-  };
-
-  const data: ProdutcProps[] = []; // TODO: Apagar
+  useEffect(() => {
+    fetch('/api/products')
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data);
+      });
+  }, []);
 
   return (
     <main className="overflow-x-hidden font-outfit text-zinc-900">
@@ -32,10 +39,10 @@ const Products = () => {
               className="pb-4 flex items-center justify-between cursor-pointer"
               onClick={() => setShowCategoria(!showCategoria)}
             >
-              <span className="text-xl font-sofia font-semibold">
+              <span className={`${fontSofiaCondensed.className} text-xl font-sofia font-semibold`}>
                 Categoria
               </span>
-              <i className="fa-solid fa-chevron-down text-xs"></i>
+              {!showCategoria ? <ArrowDown size={14} /> : <ArrowUp size={14} />}
             </div>
             <div
               className={`${showCategoria ? "flex flex-col" : "hidden"} gap-2`}
@@ -47,7 +54,7 @@ const Products = () => {
                   name="categoria"
                   id=""
                 />
-                <span>Marketing e vendas</span>
+                <span className={fontOutfit.className}>Marketing e vendas</span>
               </div>
               <div className="flex items-center gap-2 font-outfit">
                 <input
@@ -56,7 +63,7 @@ const Products = () => {
                   name="categoria"
                   id=""
                 />
-                <span>BIY</span>
+                <span className={fontOutfit.className}>BIY</span>
               </div>
               <div className="flex items-center gap-2 font-outfit">
                 <input
@@ -65,7 +72,7 @@ const Products = () => {
                   name="categoria"
                   id=""
                 />
-                <span>Finanças</span>
+                <span className={fontOutfit.className}>Finanças</span>
               </div>
               <div className="flex items-center gap-2 font-outfit">
                 <input
@@ -74,15 +81,15 @@ const Products = () => {
                   name="categoria"
                   id=""
                 />
-                <span>Dev e TI</span>
+                <span className={fontOutfit.className}>Dev e TI</span>
               </div>
             </div>
             <div
               className="py-4 flex items-center justify-between cursor-pointer"
               onClick={() => setShowPlano(!showPlano)}
             >
-              <span className="text-xl font-sofia font-semibold">Plano</span>
-              <i className="fa-solid fa-chevron-down text-xs"></i>
+              <span className={`${fontSofiaCondensed.className} text-xl font-sofia font-semibold`}>Plano</span>
+              {!showPlano ? <ArrowDown size={14} /> : <ArrowUp size={14} />}
             </div>
             <div className={`${showPlano ? "flex flex-col" : "hidden"} gap-2`}>
               <div className="flex items-center gap-2 font-outfit">
@@ -92,7 +99,7 @@ const Products = () => {
                   name="plano"
                   id=""
                 />
-                <span>Mensal</span>
+                <span className={fontOutfit.className}>Mensal</span>
               </div>
               <div className="flex items-center gap-2 font-outfit">
                 <input
@@ -101,17 +108,17 @@ const Products = () => {
                   name="plano"
                   id=""
                 />
-                <span>Único</span>
+                <span className={fontOutfit.className}>Único</span>
               </div>
             </div>
             <div
               className="py-4 flex items-center justify-between cursor-pointer"
               onClick={() => setShowAudiencia(!showAudiencia)}
             >
-              <span className="text-xl font-sofia font-semibold">
+              <span className={`${fontSofiaCondensed.className} text-xl font-sofia font-semibold`}>
                 Melhor para
               </span>
-              <i className="fa-solid fa-chevron-down text-xs"></i>
+              {!showAudiencia ? <ArrowDown size={14} /> : <ArrowUp size={14} />}
             </div>
             <div
               className={`${showAudiencia ? "flex flex-col" : "hidden"} gap-2`}
@@ -123,7 +130,7 @@ const Products = () => {
                   name="audiencia"
                   id=""
                 />
-                <span>Marketeiros</span>
+                <span className={fontOutfit.className}>Marketeiros</span>
               </div>
               <div className="flex items-center gap-2 font-outfit">
                 <input
@@ -132,7 +139,7 @@ const Products = () => {
                   name="audiencia"
                   id=""
                 />
-                <span>Criadores de conteúdo</span>
+                <span className={fontOutfit.className}>Criadores de conteúdo</span>
               </div>
               <div className="flex items-center gap-2 font-outfit">
                 <input
@@ -141,7 +148,7 @@ const Products = () => {
                   name="audiencia"
                   id=""
                 />
-                <span>Bloggers</span>
+                <span className={fontOutfit.className}>Bloggers</span>
               </div>
               <div className="flex items-center gap-2 font-outfit">
                 <input
@@ -150,7 +157,7 @@ const Products = () => {
                   name="audiencia"
                   id=""
                 />
-                <span>Eugências</span>
+                <span className={fontOutfit.className}>Eugências</span>
               </div>
               <div className="flex items-center gap-2 font-outfit">
                 <input
@@ -159,7 +166,7 @@ const Products = () => {
                   name="audiencia"
                   id=""
                 />
-                <span>Influencers</span>
+                <span className={fontOutfit.className}>Influencers</span>
               </div>
               <div className="flex items-center gap-2 font-outfit">
                 <input
@@ -168,7 +175,7 @@ const Products = () => {
                   name="audiencia"
                   id=""
                 />
-                <span>SaaS</span>
+                <span className={fontOutfit.className}>SaaS</span>
               </div>
               <div className="flex items-center gap-2 font-outfit">
                 <input
@@ -177,21 +184,20 @@ const Products = () => {
                   name="audiencia"
                   id=""
                 />
-                <span>Web designers</span>
+                <span className={fontOutfit.className}>Web designers</span>
               </div>
             </div>
           </div>
 
           <div className="col-span-8 grid grid-cols-4 gap-x-4 gap-y-12 min-h-[50vh]">
-            <div className="flex flex-col col-span-4">
+            <div className={`flex flex-col col-span-4 ${fontOutfit.className}`}>
               <strong>Softwares</strong>
-              <span>{data.length} produtos</span>
+              <span>{products.length} produtos</span>
             </div>
-            {data.map((product) => (
+
+            {products.map((product) => (
               <Link
-                href={`/produtos/${product.id}/${convertTitleToSlug(
-                  product.title
-                )}`}
+                href={`/products/${product.id}`}
                 className="flex flex-col items-center justify-center gap-4"
                 key={product.id}
               >
