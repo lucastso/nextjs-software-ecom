@@ -1,7 +1,5 @@
 "use client";
 
-import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
 import { categories } from "@/misc/categories";
 import { categories_styles } from "@/misc/categories_styles";
 import { fontOutfit, fontSofiaCondensed } from "@/misc/fonts";
@@ -17,21 +15,24 @@ export const metadata = {
 
 const Products = () => {
   const [products, setProducts] = useState<ProductProps[]>([]);
+  const [loading, setLoading] = useState(true);
   const [showCategoria, setShowCategoria] = useState(false);
   const [showPlano, setShowPlano] = useState(false);
   const [showAudiencia, setShowAudiencia] = useState(false);
 
   useEffect(() => {
-    fetch('/api/products')
+    setLoading(true);
+
+    fetch("/api/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
+        setLoading(false);
       });
   }, []);
 
   return (
-    <main className="overflow-x-hidden font-outfit text-zinc-900">
-      <Navbar />
+    <main className="overflow-x-hidden text-zinc-900">
       <section className="w-4/6 mx-auto flex flex-col gap-24 mt-24">
         <div className="grid grid-cols-10 gap-12">
           <div className="col-span-2 flex flex-col">
@@ -39,7 +40,9 @@ const Products = () => {
               className="pb-4 flex items-center justify-between cursor-pointer"
               onClick={() => setShowCategoria(!showCategoria)}
             >
-              <span className={`${fontSofiaCondensed.className} text-xl font-sofia font-semibold`}>
+              <span
+                className={`${fontSofiaCondensed.className} text-xl font-sofia font-semibold`}
+              >
                 Categoria
               </span>
               {!showCategoria ? <ArrowDown size={14} /> : <ArrowUp size={14} />}
@@ -88,7 +91,11 @@ const Products = () => {
               className="py-4 flex items-center justify-between cursor-pointer"
               onClick={() => setShowPlano(!showPlano)}
             >
-              <span className={`${fontSofiaCondensed.className} text-xl font-sofia font-semibold`}>Plano</span>
+              <span
+                className={`${fontSofiaCondensed.className} text-xl font-sofia font-semibold`}
+              >
+                Plano
+              </span>
               {!showPlano ? <ArrowDown size={14} /> : <ArrowUp size={14} />}
             </div>
             <div className={`${showPlano ? "flex flex-col" : "hidden"} gap-2`}>
@@ -115,7 +122,9 @@ const Products = () => {
               className="py-4 flex items-center justify-between cursor-pointer"
               onClick={() => setShowAudiencia(!showAudiencia)}
             >
-              <span className={`${fontSofiaCondensed.className} text-xl font-sofia font-semibold`}>
+              <span
+                className={`${fontSofiaCondensed.className} text-xl font-sofia font-semibold`}
+              >
                 Melhor para
               </span>
               {!showAudiencia ? <ArrowDown size={14} /> : <ArrowUp size={14} />}
@@ -139,7 +148,9 @@ const Products = () => {
                   name="audiencia"
                   id=""
                 />
-                <span className={fontOutfit.className}>Criadores de conteúdo</span>
+                <span className={fontOutfit.className}>
+                  Criadores de conteúdo
+                </span>
               </div>
               <div className="flex items-center gap-2 font-outfit">
                 <input
@@ -189,58 +200,71 @@ const Products = () => {
             </div>
           </div>
 
-          <div className="col-span-8 grid grid-cols-4 gap-x-4 gap-y-12 min-h-[50vh]">
-            <div className={`flex flex-col col-span-4 ${fontOutfit.className}`}>
-              <strong>Softwares</strong>
-              <span>{products.length} produtos</span>
-            </div>
-
-            {products.map((product) => (
-              <Link
-                href={`/products/${product.id}`}
-                className="flex flex-col items-center justify-center gap-4"
-                key={product.id}
+          {loading && (
+            <div className="col-span-8 grid grid-cols-4 gap-x-4 gap-y-12">
+              <span
+                className={`font-semibold tracking-wider ${fontOutfit.className}`}
               >
-                <img
-                  src={product.image}
-                  alt="Terno"
-                  className="rounded-sm object-cover h-80"
-                />
-                <div className="flex flex-col items-center gap-1 w-full">
-                  <div className="flex items-center justify-between w-full">
-                    <span>{product.title}</span>
-                    <span
-                      className={`rounded-full ${
-                        categories_styles[product.category_id]
-                      } px-3 text-xs`}
-                    >
-                      {categories[product.category_id]}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between w-full">
-                    <span className="line-through text-xs">
-                      {"R$ " +
-                        Math.round(product.price + 100)
-                          .toFixed(2)
-                          .replace(".", ",")}
-                    </span>
-                    <div className="flex xs:flex-col lg:flex-row gap-1 items-center">
-                      <span className="text-xl font-semibold font-sofia">
+                Carregando produtos...
+              </span>
+            </div>
+          )}
+
+          {!loading && (
+            <div className="col-span-8 grid grid-cols-4 gap-x-4 gap-y-12">
+              <div
+                className={`flex flex-col col-span-4 ${fontOutfit.className}`}
+              >
+                <strong>Softwares</strong>
+                <span>{products.length} produtos</span>
+              </div>
+
+              {products.map((product) => (
+                <Link
+                  href={`/products/${product.id}`}
+                  className="flex flex-col items-center justify-center gap-4"
+                  key={product.id}
+                >
+                  <img
+                    src={product.image}
+                    alt="Terno"
+                    className="rounded-sm object-cover h-80"
+                  />
+                  <div className="flex flex-col items-center gap-1 w-full">
+                    <div className="flex items-center justify-between w-full">
+                      <span>{product.title}</span>
+                      <span
+                        className={`rounded-full ${
+                          categories_styles[product.category_id]
+                        } px-3 text-xs`}
+                      >
+                        {categories[product.category_id]}
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between w-full">
+                      <span className="line-through text-xs">
                         {"R$ " +
-                          Math.round(product.price)
+                          Math.round(product.price + 100)
                             .toFixed(2)
                             .replace(".", ",")}
                       </span>
-                      <span>/único</span>
+                      <div className="flex xs:flex-col lg:flex-row gap-1 items-center">
+                        <span className="text-xl font-semibold font-sofia">
+                          {"R$ " +
+                            Math.round(product.price)
+                              .toFixed(2)
+                              .replace(".", ",")}
+                        </span>
+                        <span>/único</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
-      <Footer />
     </main>
   );
 };

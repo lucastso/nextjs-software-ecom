@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className={`static bottom-0 w-screen ${fontOutfit.className}`}>
+    <footer className={`w-screen ${fontOutfit.className}`}>
       <div className="bg-zinc-200 text-white text-sm mt-24">
         <div className="w-4/6 mx-auto flex xs:flex-col lg:flex-row xs:gap-12 lg:gap-0 items-start justify-between py-12">
           <div className="flex flex-col items-start gap-4 text-zinc-400">
