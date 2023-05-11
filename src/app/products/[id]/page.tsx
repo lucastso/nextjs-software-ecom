@@ -16,7 +16,22 @@ const Product = () => {
       });
   }, []);
 
-  return <div>{productData?.title}</div>;
+  return (
+    <main className="overflow-x-hidden text-zinc-900">
+      <section className="w-4/6 mx-auto flex flex-col gap-24 mt-24">
+        <div className="grid grid-cols-10 gap-12">
+          <section className="col-span-8">
+            <img
+              src={productData?.image}
+              alt="Software product image"
+              className="h-[40vh] w-full object-cover rounded-sm"
+            />
+          </section>
+          <section className="col-span-2">{productData?.title}</section>
+        </div>
+      </section>
+    </main>
+  );
 };
 
 export default Product;

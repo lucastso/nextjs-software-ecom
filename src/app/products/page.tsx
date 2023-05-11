@@ -233,13 +233,7 @@ const Products = () => {
                   <div className="flex flex-col items-center gap-1 w-full">
                     <div className="flex items-center justify-between w-full">
                       <span>{product.title}</span>
-                      <span
-                        className={`rounded-full ${
-                          categories_styles[product.category_id]
-                        } px-3 text-xs`}
-                      >
-                        {categories[product.category_id]}
-                      </span>
+                      <span>{product.category?.category}</span>
                     </div>
                     <div className="flex items-center justify-between w-full">
                       <span className="line-through text-xs">

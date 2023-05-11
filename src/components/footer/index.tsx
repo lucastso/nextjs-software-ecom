@@ -17,7 +17,7 @@ const Footer = () => {
               <strong>Loja</strong>
               <div className="flex flex-col gap-2 text-zinc-400">
                 <Link href="/">Newsletter</Link>
-                <Link href="/favoritados">Favoritados</Link>
+                <Link href="/favourites">Favoritados</Link>
               </div>
             </div>
             <div className="flex flex-col gap-4">
