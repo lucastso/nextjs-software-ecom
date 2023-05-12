@@ -1,3 +1,5 @@
+import { Category } from "@prisma/client";
+
 export interface ProductProps {
   id: number;
   title: string;
@@ -5,4 +7,5 @@ export interface ProductProps {
   image: string;
   price: number;
   category_id: number;
+  category: Category;
 }

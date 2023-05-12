@@ -8,15 +8,17 @@ datasource db {
 }
 
 model Category {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
   category String
+  product  Product?
 }
 
 model Product {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
-  categoryId  String @unique @db.ObjectId
-  description String
-  image       String
-  price       Float
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   title       String
+  description String
+  price       Float
+  image       String
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId  String   @unique @db.ObjectId
 }
