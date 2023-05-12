@@ -1,15 +1,15 @@
-import { prisma } from '@/lib/prisma'
+import { prisma } from "@/lib/prisma";
 
 export const getAllProducts = async () => {
-    const products = await prisma.product.findMany();
+  const products = await prisma.product.findMany();
 
-    return products;
-}
+  return products;
+};
 
 export const getProduct = async (id: string) => {
-    const product = await prisma.product.findUnique({
-        where: { id }
-    });
+  const product = await prisma.product.findUnique({
+    where: { id },
+  });
 
-    return product;
-}
+  return product;
+};

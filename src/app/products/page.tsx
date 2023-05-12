@@ -202,9 +202,7 @@ const Products = () => {
 
           {loading && (
             <div className="col-span-8 grid grid-cols-4 gap-x-4 gap-y-12">
-              <span
-                className={`font-semibold tracking-wider ${fontOutfit.className}`}
-              >
+              <span className={`font-semibold ${fontOutfit.className}`}>
                 Carregando produtos...
               </span>
             </div>
