@@ -1,6 +1,6 @@
 "use client";
 
-import { ProductProps } from "@/types/product";
+import { ProductProps } from "@/types/product_props";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 

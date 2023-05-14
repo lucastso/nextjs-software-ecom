@@ -24,7 +24,7 @@ const Footer = () => {
               <strong>Suporte</strong>
               <div className="flex flex-col gap-2 text-zinc-400">
                 <Link href="tel:15981289156">15-98128-9156</Link>
-                <Link href="/termos">Termos de uso</Link>
+                <Link href="/terms">Termos de uso</Link>
               </div>
             </div>
           </div>

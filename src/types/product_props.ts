@@ -7,5 +7,4 @@ export interface ProductProps {
   image: string;
   price: number;
   category_id: number;
-  category: Category;
 }
