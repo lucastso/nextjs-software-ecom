@@ -1,10 +1,8 @@
-import { Category } from "@prisma/client";
-
 export interface ProductProps {
-  id: number;
+  id: string;
   title: string;
   description: string;
   image: string;
   price: number;
-  category_id: number;
+  category: string;
 }

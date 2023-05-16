@@ -1,4 +1,5 @@
-import { fontSofiaCondensed } from "@/misc/fonts";
+import { barlowCondensed } from "@/misc/fonts";
+import Image from "next/image";
 import Link from "next/link";
 
 const Categories = () => {
@@ -45,13 +46,17 @@ const Categories = () => {
           className="cols-span-1 flex items-center flex-col gap-4"
           key={el.id}
         >
-          <img
+          <Image
             src={el.image}
+            width={0}
+            height={0}
+            sizes="100vw"
+            fill
             alt={el.alt}
             className="w-full xs:h-56 lg:h-80 object-cover rounded-sm"
           />
           <strong
-            className={`text-xl uppercase tracking-wider ${fontSofiaCondensed.className}`}
+            className={`text-xl uppercase tracking-wider ${barlowCondensed.className}`}
           >
             {el.title}
           </strong>

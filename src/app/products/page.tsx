@@ -1,8 +1,9 @@
-import { fontOutfit, fontSofiaCondensed } from "@/misc/fonts";
+import { fontOutfit, barlowCondensed } from "@/misc/fonts";
 import { ProductProps } from "@/types/product_props";
 import { ProductPropsArray } from "@/types/product_props_array";
 import { ArrowDown, ArrowUp } from "@phosphor-icons/react";
 import { GetServerSideProps, NextPage } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const getServerSideProps: GetServerSideProps<
@@ -48,8 +49,11 @@ const Products = ({ products }: ProductPropsArray) => {
                 className="flex flex-col items-center justify-center gap-4"
                 key={product.id}
               >
-                <img
+                <Image
                   src={product.image}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
                   alt="Terno"
                   className="rounded-sm object-cover h-80"
                 />

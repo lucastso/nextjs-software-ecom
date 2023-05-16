@@ -1,6 +1,6 @@
 "use client";
 
-import { fontOutfit, fontSofiaCondensed } from "@/misc/fonts";
+import { fontOutfit, barlowCondensed } from "@/misc/fonts";
 import { MagnifyingGlass, List, Basket, Heart } from "@phosphor-icons/react";
 import Link from "next/link";
 
@@ -45,7 +45,7 @@ const Navbar = () => {
         </Link>
 
         <div
-          className={`xs:hidden lg:flex items-center justify-center gap-8 ${fontSofiaCondensed.className} font-semibold text-lg tracking-wider`}
+          className={`xs:hidden lg:flex items-center justify-center gap-8 ${barlowCondensed.className} font-semibold text-lg tracking-wider`}
         >
           <Link href="/" className="font-semibold">
             HOME

@@ -1,6 +1,6 @@
 "use client";
 
-import { fontOutfit, fontSofiaCondensed } from "@/misc/fonts";
+import { fontOutfit, barlowCondensed } from "@/misc/fonts";
 import { ArrowRight, ArrowLeft } from "@phosphor-icons/react";
 import { useState } from "react";
 
@@ -10,7 +10,7 @@ const About = () => {
   return (
     <div className="xs:w-full lg:w-4/6 mx-auto xs:px-6 lg:px-0 flex flex-col gap-8">
       <span
-        className={`font-semibold text-2xl tracking-wider ${fontSofiaCondensed.className}`}
+        className={`font-semibold text-2xl tracking-wider ${barlowCondensed.className}`}
       >
         O DESTINO DO MARKETPLACE DE SOFTWARE
       </span>
@@ -39,7 +39,7 @@ const About = () => {
       </div>
 
       <span
-        className={`font-semibold text-2xl tracking-wider self-center cursor-pointer ${fontSofiaCondensed.className}`}
+        className={`font-semibold text-2xl tracking-wider self-center cursor-pointer ${barlowCondensed.className}`}
         onClick={() => setShowMoreAbout(!showMoreAbout)}
       >
         {showMoreAbout ? (
