@@ -1,5 +1,5 @@
-import { ProductProps } from "./product_props";
+import { ProductProps } from './product_props'
 
 export interface ProductPropsArray {
-  products: ProductProps[];
+  products: ProductProps[]
 }

@@ -1,20 +1,20 @@
-"use client";
+'use client'
 
-import { ProductProps } from "@/types/product_props";
-import { useParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import { ProductProps } from '@/types/product_props'
+import { useParams } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
 
 const Product = () => {
-  const [productData, setProductData] = useState<ProductProps>();
-  const { id } = useParams();
+  const [productData, setProductData] = useState<ProductProps>()
+  const { id } = useParams()
 
   useEffect(() => {
     fetch(`/api/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        setProductData(data);
-      });
-  }, []);
+        setProductData(data)
+      })
+  }, [])
 
   return (
     <main className="overflow-x-hidden text-zinc-900">
@@ -31,7 +31,7 @@ const Product = () => {
         </div>
       </section>
     </main>
-  );
-};
+  )
+}
 
-export default Product;
+export default Product

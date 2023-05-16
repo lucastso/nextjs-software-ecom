@@ -1,10 +1,10 @@
-import Categories from "@/components/categories";
-import { fontOutfit, barlowCondensed } from "@/misc/fonts";
+import Categories from '@/components/categories'
+import { fontOutfit, barlowCondensed } from '@/misc/fonts'
 
 export const metadata = {
-  title: "Paracord Z - Favoritos",
-  description: "Esse são seus produtos favoritos da Paracord Z",
-};
+  title: 'Paracord Z - Favoritos',
+  description: 'Esse são seus produtos favoritos da Paracord Z',
+}
 
 const Favourites = () => {
   return (
@@ -22,7 +22,7 @@ const Favourites = () => {
       </section>
       <Categories />
     </main>
-  );
-};
+  )
+}
 
-export default Favourites;
+export default Favourites

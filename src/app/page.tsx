@@ -1,8 +1,8 @@
-import About from "@/components/about";
-import Categories from "@/components/categories";
-import { fontOutfit, barlowCondensed } from "@/misc/fonts";
-import Image from "next/image";
-import Link from "next/link";
+import About from '@/components/about'
+import Categories from '@/components/categories'
+import { fontOutfit, barlowCondensed } from '@/misc/fonts'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const HomePage = () => {
   return (
@@ -41,7 +41,7 @@ const HomePage = () => {
         <About />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage

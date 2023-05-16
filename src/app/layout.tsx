@@ -1,27 +1,23 @@
-import { fontOutfit } from "@/misc/fonts";
-import "./globals.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+import './globals.css'
+import Navbar from '@/components/navbar'
+import Footer from '@/components/footer'
+import { ReactNode } from 'react'
 
 export const metadata = {
-  generator: "Next.js",
+  generator: 'Next.js',
   keywords: [
-    "Software",
-    "Programas",
-    "Aplicações",
-    "Plataformas",
-    "E-commerce",
+    'Software',
+    'Programas',
+    'Aplicações',
+    'Plataformas',
+    'E-commerce',
   ],
-  creator: "Lucas",
-  title: "Paracord Z - Software",
-  description: "Paracord Z - Software",
-};
+  creator: 'Lucas',
+  title: 'Paracord Z - Software',
+  description: 'Paracord Z - Software',
+}
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
@@ -32,5 +28,5 @@ export default function RootLayout({
         </main>
       </body>
     </html>
-  );
+  )
 }

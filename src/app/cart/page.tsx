@@ -1,10 +1,10 @@
-import { fontOutfit, barlowCondensed } from "@/misc/fonts";
-import Link from "next/link";
+import { fontOutfit, barlowCondensed } from '@/misc/fonts'
+import Link from 'next/link'
 
 export const metadata = {
-  title: "Paracord Z - Carrinho",
-  description: "Esse é o seu carrinho de produtos da Paracord Z",
-};
+  title: 'Paracord Z - Carrinho',
+  description: 'Esse é o seu carrinho de produtos da Paracord Z',
+}
 
 const Cart = () => {
   return (
@@ -28,7 +28,7 @@ const Cart = () => {
         </div>
       </section>
     </main>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart

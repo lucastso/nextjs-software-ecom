@@ -1,11 +1,11 @@
-"use client";
+'use client'
 
-import { fontOutfit, barlowCondensed } from "@/misc/fonts";
-import { ArrowRight, ArrowLeft } from "@phosphor-icons/react";
-import { useState } from "react";
+import { fontOutfit, barlowCondensed } from '@/misc/fonts'
+import { ArrowRight, ArrowLeft } from '@phosphor-icons/react'
+import { useState } from 'react'
 
 const About = () => {
-  const [showMoreAbout, setShowMoreAbout] = useState(false);
+  const [showMoreAbout, setShowMoreAbout] = useState(false)
 
   return (
     <div className="xs:w-full lg:w-4/6 mx-auto xs:px-6 lg:px-0 flex flex-col gap-8">
@@ -23,13 +23,13 @@ const About = () => {
           queriam criar uma marca que fosse sinônimo de funcionalidade e
           praticidade.
         </span>
-        <span className={`${showMoreAbout ? "hidden" : "block"}`}>...</span>
-        <span className={`${!showMoreAbout ? "hidden" : "block"}`}>
+        <span className={`${showMoreAbout ? 'hidden' : 'block'}`}>...</span>
+        <span className={`${!showMoreAbout ? 'hidden' : 'block'}`}>
           Com o tempo, a Paracord Z se tornou uma das lojas online de software
           mais populares da internet, com clientes em todo o mundo. Seu catálogo
           inclui softwares para diversas finalidades.
         </span>
-        <span className={`${!showMoreAbout ? "hidden" : "block"}`}>
+        <span className={`${!showMoreAbout ? 'hidden' : 'block'}`}>
           Se você está procurando software de alta qualidade a preços
           acessíveis, não precisa procurar mais do que a Paracord Z. Com sua
           combinação única de funcionalidade e atendimento ao cliente
@@ -55,7 +55,7 @@ const About = () => {
         )}
       </span>
     </div>
-  );
-};
+  )
+}
 
-export default About;
+export default About

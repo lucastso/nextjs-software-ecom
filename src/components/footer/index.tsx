@@ -1,5 +1,6 @@
-import { fontOutfit } from "@/misc/fonts";
-import Link from "next/link";
+import { fontOutfit } from '@/misc/fonts'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -8,7 +9,14 @@ const Footer = () => {
         <div className="w-4/6 mx-auto flex xs:flex-col lg:flex-row xs:gap-12 lg:gap-0 items-start justify-between py-12">
           <div className="flex flex-col items-start gap-4 text-zinc-400">
             <Link href="/">
-              <img src="/vite.svg" alt="Logo" className="w-32" />
+              <Image
+                src="/vite.svg"
+                alt="Logo"
+                className="w-32"
+                width={128}
+                height={0}
+                fill
+              />
             </Link>
             <span>A Paracord Z é um e-commerce de softwares.</span>
           </div>
@@ -30,10 +38,12 @@ const Footer = () => {
           </div>
           <div className="flex flex-col xs:items-start lg:items-end gap-4">
             <strong className="text-zinc-900">Métodos de pagamento</strong>
-            <img
+            <Image
+              width={192}
+              height={0}
+              fill
               src="https://vinomundi.com.br/wp-content/uploads/2022/02/bandeira-de-cartoes-11.webp"
               alt="Payment methods"
-              className="w-48"
             />
           </div>
         </div>
@@ -43,7 +53,7 @@ const Footer = () => {
         <span>Copyright &copy; Woogon. Todos os direitos reservados.</span>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

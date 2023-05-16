@@ -1,5 +1,5 @@
-import { fontOutfit } from "@/misc/fonts";
-import React from "react";
+import { fontOutfit } from '@/misc/fonts'
+import React from 'react'
 
 const Loading = () => {
   return (
@@ -10,7 +10,7 @@ const Loading = () => {
         </span>
       </section>
     </main>
-  );
-};
+  )
+}
 
-export default Loading;
+export default Loading

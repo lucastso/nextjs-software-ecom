@@ -1,32 +1,31 @@
-import { fontOutfit, barlowCondensed } from "@/misc/fonts";
-import { ProductProps } from "@/types/product_props";
-import { ProductPropsArray } from "@/types/product_props_array";
-import { ArrowDown, ArrowUp } from "@phosphor-icons/react";
-import { GetServerSideProps, NextPage } from "next";
-import Image from "next/image";
-import Link from "next/link";
+import { fontOutfit } from '@/misc/fonts'
+import { ProductProps } from '@/types/product_props'
+import { ProductPropsArray } from '@/types/product_props_array'
+import { GetServerSideProps } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export const getServerSideProps: GetServerSideProps<
   ProductPropsArray
 > = async () => {
   try {
-    const response = await fetch("/api/products");
-    const data = await response.json();
-    const products: ProductProps[] = data.products;
+    const response = await fetch('/api/products')
+    const data = await response.json()
+    const products: ProductProps[] = data.products
 
     return {
       props: {
         products,
       },
-    };
+    }
   } catch (error) {
     return {
       props: {
         products: [],
       },
-    };
+    }
   }
-};
+}
 
 const Products = ({ products }: ProductPropsArray) => {
   return (
@@ -39,7 +38,7 @@ const Products = ({ products }: ProductPropsArray) => {
               <span>
                 {products
                   ? `${products.length} produtos`
-                  : "Sem produtos disponíveis :("}
+                  : 'Sem produtos disponíveis :('}
               </span>
             </div>
 
@@ -63,17 +62,17 @@ const Products = ({ products }: ProductPropsArray) => {
                   </div>
                   <div className="flex items-center justify-between w-full">
                     <span className="line-through text-xs">
-                      {"R$ " +
+                      {'R$ ' +
                         Math.round(product.price + 100)
                           .toFixed(2)
-                          .replace(".", ",")}
+                          .replace('.', ',')}
                     </span>
                     <div className="flex xs:flex-col lg:flex-row gap-1 items-center">
                       <span className="text-xl font-semibold font-sofia">
-                        {"R$ " +
+                        {'R$ ' +
                           Math.round(product.price)
                             .toFixed(2)
-                            .replace(".", ",")}
+                            .replace('.', ',')}
                       </span>
                       <span>/único</span>
                     </div>
@@ -85,7 +84,7 @@ const Products = ({ products }: ProductPropsArray) => {
         </div>
       </section>
     </main>
-  );
-};
+  )
+}
 
-export default Products;
+export default Products

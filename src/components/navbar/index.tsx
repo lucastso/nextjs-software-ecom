@@ -1,8 +1,9 @@
-"use client";
+'use client'
 
-import { fontOutfit, barlowCondensed } from "@/misc/fonts";
-import { MagnifyingGlass, List, Basket, Heart } from "@phosphor-icons/react";
-import Link from "next/link";
+import { fontOutfit, barlowCondensed } from '@/misc/fonts'
+import { MagnifyingGlass, List, Basket, Heart } from '@phosphor-icons/react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const Navbar = () => {
   return (
@@ -14,7 +15,7 @@ const Navbar = () => {
           <div className="xs:text-center lg:text-start">
             <a href="#" className="underline">
               Inscreva-se
-            </a>{" "}
+            </a>{' '}
             para receber o nosso e-book.
           </div>
 
@@ -41,7 +42,7 @@ const Navbar = () => {
 
       <div className="flex items-center justify-between xs:w-full lg:w-4/6 mx-auto xs:px-6 lg:px-0 py-6">
         <Link href="/">
-          <img src="/vite.svg" alt="Logo" className="w-32" />
+          <Image src="/vite.svg" alt="Logo" width={120} height={0} />
         </Link>
 
         <div
@@ -80,7 +81,7 @@ const Navbar = () => {
         />
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
